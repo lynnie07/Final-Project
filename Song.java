@@ -1,26 +1,29 @@
-public class Song extends MusicLibrary {
+public class Song {
+    private String title;
+    private String artist;
     private String genre;
-    private int duration;
 
-    public Song(String title, String artist, int releaseYear, String genre, int duration) {
-        super(title, artist, releaseYear);
+    public Song(String title, String artist, String genre) {
+        this.title = title;
+        this.artist = artist;
         this.genre = genre;
-        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
     }
 
     public String getGenre() {
         return genre;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void playSong() {
-        System.out.println("Playing song: " + getTitle());
-    }
-
-    public void pauseSong() {
-        System.out.println("Pausing song: " + getTitle());
+    @Override
+    public String toString() {
+        return "Title: " + title + "\nArtist: " + artist + "\nGenre: " + genre;
     }
 }
+
